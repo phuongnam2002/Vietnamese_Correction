@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Phương Nam</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" r
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"
+    />
+    {% load static %}
+    <link rel="icon" href="{% static 'blue.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'index.css' %}" type="text/css"/>
+<body style="background-color:#f6d4ff;text-align:center"></body>
+</head>
+<body>
+<img class="img-fluid mx-auto"
+     src="{{image_url}}" alt="PNG_Image"
+     id="image-display"
+     style="width: 150px; height: 90px; background-color: #f6d4ff"
+>
+
+<h1 style="font-size: 50px; color: #d427ff; font-family: sans-serif,arial,helvetica;">SỬA LỖI CHÍNH TẢ</h1>
+<p></p>
+<p style="color: royalblue; font-family:sans-serif,arial,helvetica; font-size: 20px;">Nhập 1 dòng chữ tiếng Việt lỗi chính tả
+    và bấm Enter, kết quả sẽ là 1 dòng chữ tương ứng đúng chính tả</p>
+</body>
+<div class="container-fluid">
+    <div class="mb-3">
+        <div class="form-floating">
+            <center>
+                <textarea class="form-control" placeholder="Fill your text here" id="desc-textarea"
+                          style="width: 1050px;height: 80px"></textarea>
+            </center>
+        </div>
+        <p></p>
+        {%csrf_token%}
+        <center>
+             <button style="width: 100px; color: black; border-radius: 20px 20px 20px 20px;font-size: 20px;background-color: royalblue" type="button" class="btn btn-outline-primary"
+                    id="enter-btn">Enter
+            </button>
+        </center>
+        <p></p>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status" style="display: none;" id="spiner">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <center>
+                <textarea class="form-control" placeholder="Your output" id="output"
+                          style="width: 1050px;height: 80px"></textarea>
+        </center>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+<script src="{% static 'index.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
